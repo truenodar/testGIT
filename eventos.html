@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="color">Color Negro/Rojo</p>
+<button id="btnChange">Cambiar color fondo</button>
+
+<hr>
+
+<form id="form">    
+    
+    <input type="text" name="" id="calculo1">
+    <input ype="text" name="" id="calculo2">
+    <button id="btnCalcular" >Calcular</button>
+    <!-- <button id="btnCalcular" onclick="btnOnClick()" >Calcular</button>-->
+
+</form>
+<p id="result"></p>
+
+<script>
+const color= document.querySelector('#color');
+const btnChange = document.querySelector('#btnChange');
+
+color.addEventListener('mouseover', changeColor);
+
+function changeColor(){
+    color.style.color = "red";
+    color.style.background = "black";
+}
+
+const form = document.querySelector('#form');
+const input1 = document.querySelector('#calculo1');
+const input2 = document.querySelector('#calculo2');
+const btn = document.querySelector('#btnCalcular');
+const pResult = document.querySelector('#result');
+
+form.addEventListener('submit', sumarInputsForm);
+
+function sumarInputsForm(event){
+    event.preventDefault(); // cambia el comportamiento por defeault del submit para no recargar la pagina
+    const sumaInputs = Number(input1.value) + Number(input2.value);
+    pResult.innerText = sumaInputs;
+}
+
+// btn.addEventListener('click', btnOnClick);
+
+// function btnOnClick(){
+//     const sumaInputs = Number(input1.value) + Number(input2.value);
+//     pResult.innerText = sumaInputs;
+// }
+</script>
+
+</body>
+</html>
